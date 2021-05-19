@@ -4,8 +4,11 @@ inputs:
   url: 
     description: "url server"
     required: true
+  namespacetag: 
+    description: "namespace name for the tag"
+    required: true
   namespace: 
-    description: "namespace name"
+    description: "namespace name origin"
     required: true
   imagename: 
     description: "image name"
@@ -21,6 +24,7 @@ runs:
   image: "Dockerfile"
   args:
     - ${{ inputs.url }}
+    - ${{ inputs.namespacetag }}
     - ${{ inputs.namespace }}
     - ${{ inputs.imagename }}
     - ${{ inputs.buildnr }}
